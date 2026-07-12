@@ -14,17 +14,22 @@
     <div class="grid grid--2 services-grid">
       @for (service of services; track service.title) {
         <div class="card service-detail">
-          <mat-icon class="service-detail__icon">{{ service.icon }}</mat-icon>
-          <h2>{{ service.title }}</h2>
-          <p>{{ service.description }}</p>
-          <ul class="service-detail__features">
-            @for (feature of service.features; track feature) {
-              <li>
-                <mat-icon>check</mat-icon>
-                <span>{{ feature }}</span>
-              </li>
-            }
-          </ul>
+          <div class="service-detail__media">
+            <img [src]="service.image" [alt]="service.imageAlt" loading="lazy" />
+          </div>
+          <div class="service-detail__body">
+            <mat-icon class="service-detail__icon">{{ service.icon }}</mat-icon>
+            <h2>{{ service.title }}</h2>
+            <p>{{ service.description }}</p>
+            <ul class="service-detail__features">
+              @for (feature of service.features; track feature) {
+                <li>
+                  <mat-icon>check</mat-icon>
+                  <span>{{ feature }}</span>
+                </li>
+              }
+            </ul>
+          </div>
         </div>
       }
     </div>

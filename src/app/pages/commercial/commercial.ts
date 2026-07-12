@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 interface CommercialService {
   icon: string;
+  image: string;
+  imageAlt: string;
   title: string;
   description: string;
   features: string[];
@@ -34,6 +36,8 @@ export class Commercial {
   protected readonly services: CommercialService[] = [
     {
       icon: 'science',
+      image: 'https://images.unsplash.com/photo-1669101602108-fa5ba89507ee?w=800&q=80&auto=format&fit=crop',
+      imageAlt: 'Technician in protective cleanroom equipment',
       title: 'Cleanroom HVAC & construction',
       description:
         'End-to-end design, build, and maintenance of ISO-classified cleanrooms for pharma, semiconductor, biotech, and food processing facilities.',
@@ -46,6 +50,8 @@ export class Commercial {
     },
     {
       icon: 'precision_manufacturing',
+      image: 'https://images.unsplash.com/photo-1670483111819-ed62eff77173?w=800&q=80&auto=format&fit=crop',
+      imageAlt: 'Large industrial machines inside a manufacturing facility',
       title: 'Industrial process cooling',
       description:
         'Dedicated cooling systems for heat-intensive industrial equipment and processes, including induction furnace areas and manufacturing lines.',
@@ -58,6 +64,8 @@ export class Commercial {
     },
     {
       icon: 'storefront',
+      image: 'https://images.unsplash.com/photo-1545649311-24d0ac00ae82?w=800&q=80&auto=format&fit=crop',
+      imageAlt: 'Row of commercial air conditioning condenser units',
       title: 'Commercial HVAC',
       description:
         'Central AC, VRF/VRV systems, and ventilation designed for offices, retail stores, and multi-tenant commercial buildings.',
@@ -70,6 +78,8 @@ export class Commercial {
     },
     {
       icon: 'warehouse',
+      image: 'https://images.unsplash.com/photo-1708705261211-b2a244a811dc?w=800&q=80&auto=format&fit=crop',
+      imageAlt: 'Overhead ductwork and ventilation piping in a facility',
       title: 'Ductwork & ventilation',
       description:
         'Large-scale ducting, exhaust, and ventilation systems engineered for factories, warehouses, and industrial facilities.',
