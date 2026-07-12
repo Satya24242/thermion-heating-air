@@ -27,7 +27,7 @@ interface Testimonial {
   styleUrl: './home.scss',
 })
 export class Home {
-  protected readonly serviceAreas = ['Denver', 'Aurora', 'Lakewood', 'Boulder', 'Littleton', 'Englewood'];
+  protected readonly serviceAreas = ['Kondapur', 'Gachibowli', 'Madhapur', 'Hitec City', 'Kukatpally', 'Miyapur'];
 
   protected readonly services: ServiceSummary[] = [
     { icon: 'ac_unit', title: 'AC repair & install', description: 'Fast diagnostics and new system installs.' },
@@ -41,25 +41,25 @@ export class Home {
   protected readonly values: Value[] = [
     { icon: 'check_circle', text: 'Same-day appointments available' },
     { icon: 'check_circle', text: 'Upfront, flat-rate pricing' },
-    { icon: 'check_circle', text: 'NATE-certified technicians' },
+    { icon: 'check_circle', text: 'Certified, background-checked technicians' },
     { icon: 'check_circle', text: '100% satisfaction guarantee' },
   ];
 
   protected readonly testimonials: Testimonial[] = [
     {
-      quote: 'Tech arrived within 2 hours and fixed our AC same day. Fair price, no upsell.',
-      name: 'Maria G.',
-      location: 'Aurora',
+      quote: 'Technician arrived within 2 hours and fixed our AC same day. Fair price, no upsell.',
+      name: 'Anitha R.',
+      location: 'Gachibowli',
     },
     {
-      quote: 'Replaced our furnace before the cold snap hit. Clean install, clear pricing.',
-      name: 'Devon K.',
-      location: 'Littleton',
+      quote: 'Installed a new split AC before the summer heat hit. Clean work, clear pricing.',
+      name: 'Vikram S.',
+      location: 'Madhapur',
     },
     {
       quote: "Maintenance plan has paid for itself. They catch issues before they're expensive.",
-      name: 'Priya S.',
-      location: 'Boulder',
+      name: 'Priya N.',
+      location: 'Kukatpally',
     },
   ];
 }

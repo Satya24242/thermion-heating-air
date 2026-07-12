@@ -41,12 +41,12 @@ export class Contact {
     'Not sure yet',
   ];
 
-  protected readonly serviceAreas = ['Denver', 'Aurora', 'Lakewood', 'Boulder', 'Littleton', 'Englewood'];
+  protected readonly serviceAreas = ['Kondapur', 'Gachibowli', 'Madhapur', 'Hitec City', 'Kukatpally', 'Miyapur'];
 
   protected readonly channels: ContactChannel[] = [
-    { icon: 'call', title: 'Call Us', value: '(303) 555-0199', href: 'tel:+13035550199' },
-    { icon: 'mail', title: 'Email Us', value: 'hello@thermionhvac.com', href: 'mailto:hello@thermionhvac.com' },
-    { icon: 'place', title: 'Service Area', value: 'Denver, CO & surrounding areas', href: '#' },
+    { icon: 'call', title: 'Call Us', value: '+91 96295 99253', href: 'tel:+919629599253' },
+    { icon: 'mail', title: 'Email Us', value: 'satyareddy608@gmail.com', href: 'mailto:satyareddy608@gmail.com' },
+    { icon: 'place', title: 'Service Area', value: 'Kondapur, Hyderabad & nearby areas', href: '#' },
   ];
 
   protected readonly form = this.fb.nonNullable.group({

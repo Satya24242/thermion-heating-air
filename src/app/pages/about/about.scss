@@ -38,8 +38,14 @@
   }
 }
 
+.team-solo {
+  display: flex;
+  justify-content: center;
+}
+
 .team-card {
   text-align: center;
+  max-width: 220px;
   padding: 24px;
 }
 
