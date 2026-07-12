@@ -1,0 +1,41 @@
+.plan-card {
+  position: relative;
+  text-align: left;
+}
+
+.plan-card--featured {
+  border: 2px solid var(--brand-orange);
+}
+
+.plan-card__badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--brand-orange);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.plan-card__rate {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--brand-navy);
+  margin-top: 8px;
+}
+
+.plan-card__term {
+  font-size: 0.85rem;
+  color: var(--brand-muted);
+  margin-bottom: 14px;
+}
+
+.faq {
+  mat-expansion-panel {
+    margin-bottom: 8px;
+    box-shadow: none !important;
+    border: 1px solid var(--brand-border);
+  }
+}

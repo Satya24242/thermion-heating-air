@@ -1,0 +1,57 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Financing</span>
+    <h1>Comfort now, pay over time</h1>
+    <p>
+      Flexible financing options for repairs, replacements, and new installations —
+      with fast approval and no prepayment penalties.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--3">
+      @for (plan of plans; track plan.name) {
+        <div class="card plan-card" [class.plan-card--featured]="plan.featured">
+          @if (plan.featured) {
+            <span class="plan-card__badge">Most popular</span>
+          }
+          <h3>{{ plan.name }}</h3>
+          <div class="plan-card__rate">{{ plan.rate }}</div>
+          <div class="plan-card__term">{{ plan.term }}</div>
+          <p>{{ plan.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header center">
+      <span class="eyebrow">FAQ</span>
+      <h2>Financing questions</h2>
+    </div>
+    <mat-accordion class="faq">
+      @for (faq of faqs; track faq.question) {
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{ faq.question }}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{ faq.answer }}</p>
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__inner">
+    <div>
+      <h2>Ready to get pre-qualified?</h2>
+      <p>Get a same-day financing decision with no impact to your credit score.</p>
+    </div>
+    <a mat-flat-button routerLink="/contact" class="btn-orange">Apply Now</a>
+  </div>
+</section>

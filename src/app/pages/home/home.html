@@ -1,0 +1,126 @@
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <div class="hero__rating">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <span>4.9 (1,240 reviews)</span>
+      </div>
+      <h1>Comfort you can count on, every season</h1>
+      <p class="hero__lead">
+        Fast, reliable heating and cooling repair, installation, and maintenance across
+        the Denver metro. Same-day appointments available.
+      </p>
+      <div class="hero__actions">
+        <a mat-flat-button routerLink="/contact" class="btn-orange">Schedule Service</a>
+        <a mat-stroked-button href="tel:+13035550199">
+          <mat-icon>call</mat-icon>
+          Call Now
+        </a>
+      </div>
+      <div class="hero__badges">
+        <span class="trust-badge"><mat-icon>verified_user</mat-icon>Licensed &amp; insured</span>
+        <span class="trust-badge"><mat-icon>schedule</mat-icon>24/7 emergency</span>
+      </div>
+    </div>
+    <div class="hero__panel">
+      <mat-icon class="hero__panel-icon">home</mat-icon>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="container trust-strip__grid">
+    <div class="trust-strip__item"><mat-icon>verified_user</mat-icon>Licensed &amp; insured</div>
+    <div class="trust-strip__item"><mat-icon>schedule</mat-icon>24/7 emergency service</div>
+    <div class="trust-strip__item"><mat-icon>star</mat-icon>1,200+ 5-star reviews</div>
+    <div class="trust-strip__item"><mat-icon>credit_card</mat-icon>0% financing available</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header center">
+      <span class="eyebrow">What We Do</span>
+      <h2>Our services</h2>
+      <p>Full-service heating, cooling, and air quality solutions.</p>
+    </div>
+    <div class="grid grid--3">
+      @for (service of services; track service.title) {
+        <div class="card service-card">
+          <mat-icon class="service-card__icon">{{ service.icon }}</mat-icon>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container why-us">
+    <div class="why-us__panel">
+      <mat-icon>build</mat-icon>
+    </div>
+    <div>
+      <span class="eyebrow">Why Us</span>
+      <h2>Why homeowners choose us</h2>
+      <div class="why-us__list">
+        @for (value of values; track value.text) {
+          <div class="why-us__item">
+            <mat-icon>{{ value.icon }}</mat-icon>
+            <span>{{ value.text }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header center">
+      <span class="eyebrow">Reviews</span>
+      <h2>What customers say</h2>
+    </div>
+    <div class="grid grid--3">
+      @for (t of testimonials; track t.name) {
+        <div class="card testimonial">
+          <div class="testimonial__stars">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+          </div>
+          <p class="testimonial__quote">{{ t.quote }}</p>
+          <span class="testimonial__author">{{ t.name }}, {{ t.location }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="container offer__inner">
+    <span>Save $50 on your next service call this month</span>
+    <a mat-flat-button routerLink="/financing" class="offer__btn">Claim Offer</a>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container" style="text-align: center; padding-block: 56px;">
+    <h2>Ready for total comfort?</h2>
+    <p style="margin-bottom: 20px;">Serving {{ serviceAreas.join(', ') }}</p>
+    <div class="hero__actions" style="justify-content: center;">
+      <a mat-flat-button routerLink="/contact" class="btn-orange">Schedule Service</a>
+      <a mat-stroked-button href="tel:+13035550199" class="cta__phone-btn">
+        <mat-icon>call</mat-icon>
+        (303) 555-0199
+      </a>
+    </div>
+  </div>
+</section>

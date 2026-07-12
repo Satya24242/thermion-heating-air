@@ -1,0 +1,139 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--brand-navy);
+  color: #fff;
+  display: block;
+  padding: 0;
+  height: auto;
+}
+
+.header__inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.brand__icon--flame {
+  color: var(--brand-orange);
+}
+
+.brand__icon--snow {
+  color: #7fb8e8;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.nav--desktop {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #cfe0ef;
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.nav__link.active {
+  color: #fff;
+  font-weight: 700;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.phone-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.nav__cta {
+  white-space: nowrap;
+}
+
+.nav__toggle {
+  display: none;
+  color: #fff;
+}
+
+.nav--mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav--desktop,
+  .header__actions {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: inline-flex;
+  }
+
+  .nav--mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 24px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    a.nav__link {
+      padding: 12px 8px;
+    }
+
+    .phone-link--mobile {
+      padding: 10px 8px;
+    }
+
+    a[mat-flat-button] {
+      margin-top: 8px;
+      width: 100%;
+    }
+  }
+}

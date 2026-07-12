@@ -1,0 +1,91 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">About Ember &amp; Frost</span>
+    <h1>A family-owned HVAC company built on straight answers and fair prices</h1>
+    <p>
+      For over a decade we've kept Denver-metro homes comfortable through every season,
+      one honest service call at a time.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container stats-row">
+    @for (stat of stats; track stat.label) {
+      <div class="stat">
+        <span class="stat__value">{{ stat.value }}</span>
+        <span class="stat__label">{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header center">
+      <span class="eyebrow">Our Values</span>
+      <h2>What we believe</h2>
+    </div>
+    <div class="grid grid--4">
+      @for (value of values; track value.title) {
+        <div class="card value-card">
+          <mat-icon>{{ value.icon }}</mat-icon>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header center">
+      <span class="eyebrow">Leadership</span>
+      <h2>The team behind every service call</h2>
+    </div>
+    <div class="grid grid--4">
+      @for (member of team; track member.name) {
+        <div class="team-card">
+          <div class="team-card__avatar">{{ member.initials }}</div>
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.role }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header center">
+      <span class="eyebrow">Reviews</span>
+      <h2>What customers say</h2>
+    </div>
+    <div class="grid grid--3">
+      @for (t of testimonials; track t.name) {
+        <div class="card testimonial">
+          <div class="testimonial__stars">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+          </div>
+          <p class="testimonial__quote">{{ t.quote }}</p>
+          <span class="testimonial__author">{{ t.name }}, {{ t.location }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__inner">
+    <div>
+      <h2>Want to work with a team that answers the phone?</h2>
+      <p>Schedule a service call and see the difference for yourself.</p>
+    </div>
+    <a mat-flat-button routerLink="/contact" class="btn-orange">Schedule Service</a>
+  </div>
+</section>

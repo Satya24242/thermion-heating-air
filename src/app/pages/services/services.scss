@@ -1,0 +1,43 @@
+.services-grid {
+  align-items: stretch;
+}
+
+.service-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-detail__icon {
+  color: var(--brand-navy);
+  background: var(--brand-blue-tint);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 26px;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 16px;
+}
+
+.service-detail__features {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brand-ink);
+    font-size: 0.92rem;
+  }
+
+  mat-icon {
+    color: #16a34a;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
