@@ -182,53 +182,6 @@
   justify-content: center;
 }
 
-.why-us {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.why-us__panel {
-  background: var(--brand-blue-tint);
-  border-radius: 16px;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  mat-icon {
-    font-size: 56px;
-    width: 56px;
-    height: 56px;
-    color: var(--brand-navy);
-  }
-}
-
-.why-us__list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 20px;
-}
-
-.why-us__item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--brand-ink);
-  font-weight: 500;
-
-  mat-icon {
-    color: #16a34a;
-  }
-}
-
-@media (max-width: 860px) {
-  .why-us {
-    grid-template-columns: 1fr;
-  }
-}
 
 .testimonial__stars {
   display: flex;

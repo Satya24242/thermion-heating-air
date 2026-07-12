@@ -9,11 +9,6 @@ interface ServiceSummary {
   description: string;
 }
 
-interface Value {
-  icon: string;
-  text: string;
-}
-
 interface Testimonial {
   quote: string;
   name: string;
@@ -39,13 +34,6 @@ export class Home {
     { icon: 'science', title: 'Cleanroom HVAC', description: 'ISO-classified cleanroom design, build & maintenance.' },
     { icon: 'precision_manufacturing', title: 'Industrial process cooling', description: 'Induction furnace areas, manufacturing lines, server rooms.' },
     { icon: 'storefront', title: 'Commercial HVAC', description: 'VRF/VRV systems for offices, retail & commercial spaces.' },
-  ];
-
-  protected readonly values: Value[] = [
-    { icon: 'check_circle', text: 'Same-day appointments available' },
-    { icon: 'check_circle', text: 'Upfront, flat-rate pricing' },
-    { icon: 'check_circle', text: 'Certified, background-checked technicians' },
-    { icon: 'check_circle', text: '100% satisfaction guarantee' },
   ];
 
   protected readonly testimonials: Testimonial[] = [
