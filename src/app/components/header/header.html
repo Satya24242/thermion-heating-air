@@ -6,15 +6,34 @@
     </a>
 
     <nav class="nav nav--desktop">
-      @for (link of navLinks; track link.path) {
-        <a
-          [routerLink]="link.path"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
-          class="nav__link"
-        >
-          {{ link.label }}
-        </a>
+      @for (link of navLinks; track link.label) {
+        @if (link.children) {
+          <button
+            type="button"
+            class="nav__link nav__link--menu"
+            [class.active]="servicesMenuActive()"
+            [matMenuTriggerFor]="servicesMenu"
+          >
+            {{ link.label }}
+            <mat-icon class="nav__caret">expand_more</mat-icon>
+          </button>
+          <mat-menu #servicesMenu="matMenu">
+            @for (child of link.children; track child.path) {
+              <a mat-menu-item [routerLink]="child.path" routerLinkActive="active-item">
+                {{ child.label }}
+              </a>
+            }
+          </mat-menu>
+        } @else {
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+            class="nav__link"
+          >
+            {{ link.label }}
+          </a>
+        }
       }
     </nav>
 
@@ -41,16 +60,30 @@
 
   @if (menuOpen()) {
     <nav class="nav nav--mobile">
-      @for (link of navLinks; track link.path) {
-        <a
-          [routerLink]="link.path"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
-          class="nav__link"
-          (click)="closeMenu()"
-        >
-          {{ link.label }}
-        </a>
+      @for (link of navLinks; track link.label) {
+        @if (link.children) {
+          <span class="nav__group-label">{{ link.label }}</span>
+          @for (child of link.children; track child.path) {
+            <a
+              [routerLink]="child.path"
+              routerLinkActive="active"
+              class="nav__link nav__link--sub"
+              (click)="closeMenu()"
+            >
+              {{ child.label }}
+            </a>
+          }
+        } @else {
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+            class="nav__link"
+            (click)="closeMenu()"
+          >
+            {{ link.label }}
+          </a>
+        }
       }
       <a href="tel:+919629599253" class="phone-link phone-link--mobile">
         <mat-icon>call</mat-icon>

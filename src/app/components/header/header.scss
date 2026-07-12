@@ -63,6 +63,37 @@
   font-weight: 700;
 }
 
+.nav__link--menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.nav__caret {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.nav__group-label {
+  display: block;
+  padding: 12px 8px 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #7f95a9;
+}
+
+::ng-deep .mat-mdc-menu-item.active-item {
+  color: var(--brand-navy);
+  font-weight: 700;
+}
+
 .header__actions {
   display: flex;
   align-items: center;
@@ -118,6 +149,10 @@
 
     a.nav__link {
       padding: 12px 8px;
+    }
+
+    a.nav__link--sub {
+      padding-left: 20px;
     }
 
     .phone-link--mobile {
