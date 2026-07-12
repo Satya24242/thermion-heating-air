@@ -21,6 +21,7 @@ export class Header {
   protected readonly navLinks: NavLink[] = [
     { label: 'Home', path: '/' },
     { label: 'Services', path: '/services' },
+    { label: 'Commercial', path: '/commercial' },
     { label: 'Financing', path: '/financing' },
     { label: 'About', path: '/about' },
   ];

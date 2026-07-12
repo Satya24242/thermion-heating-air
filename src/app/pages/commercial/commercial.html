@@ -1,0 +1,56 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Commercial &amp; Industrial</span>
+    <h1>HVAC engineering for factories, cleanrooms, and commercial spaces</h1>
+    <p>
+      Beyond homes, we design, build, and maintain climate-control systems for
+      businesses across Hyderabad — from cleanroom construction to industrial
+      process cooling.
+    </p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="industries">
+      @for (industry of industries; track industry.label) {
+        <div class="industry-chip">
+          <mat-icon>{{ industry.icon }}</mat-icon>
+          <span>{{ industry.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2 services-grid">
+      @for (service of services; track service.title) {
+        <div class="card service-detail">
+          <mat-icon class="service-detail__icon">{{ service.icon }}</mat-icon>
+          <h2>{{ service.title }}</h2>
+          <p>{{ service.description }}</p>
+          <ul class="service-detail__features">
+            @for (feature of service.features; track feature) {
+              <li>
+                <mat-icon>check</mat-icon>
+                <span>{{ feature }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__inner">
+    <div>
+      <h2>Planning a facility, cleanroom, or commercial fit-out?</h2>
+      <p>Request a site survey and we'll scope the right system for your space and budget.</p>
+    </div>
+    <a mat-flat-button routerLink="/contact" class="btn-orange">Request a Site Survey</a>
+  </div>
+</section>

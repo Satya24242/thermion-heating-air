@@ -7,8 +7,8 @@
       </div>
       <h1>Comfort you can count on, every season</h1>
       <p class="hero__lead">
-        Fast, reliable heating and cooling repair, installation, and maintenance across
-        Hyderabad. Same-day appointments available.
+        Fast, reliable heating and cooling repair, installation, and maintenance for
+        homes and businesses across Hyderabad. Same-day appointments available.
       </p>
       <div class="hero__actions">
         <a mat-flat-button routerLink="/contact" class="btn-orange">Schedule Service</a>
@@ -34,6 +34,35 @@
     <div class="trust-strip__item"><mat-icon>schedule</mat-icon>24/7 emergency service</div>
     <div class="trust-strip__item"><mat-icon>star</mat-icon>Satisfaction guaranteed</div>
     <div class="trust-strip__item"><mat-icon>credit_card</mat-icon>0% financing available</div>
+  </div>
+</section>
+
+<section class="section audience">
+  <div class="container">
+    <div class="section-header center">
+      <span class="eyebrow">Who We Serve</span>
+      <h2>Homes and businesses, one trusted team</h2>
+    </div>
+    <div class="grid grid--2 audience__grid">
+      <div class="card audience-card">
+        <mat-icon class="audience-card__icon">home</mat-icon>
+        <h3>Residential</h3>
+        <p>AC and heating repair, installation, and maintenance for homes and apartments.</p>
+        <a mat-stroked-button routerLink="/services" class="audience-card__link">
+          Explore residential services
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+      </div>
+      <div class="card audience-card">
+        <mat-icon class="audience-card__icon">factory</mat-icon>
+        <h3>Commercial &amp; Industrial</h3>
+        <p>Cleanroom HVAC, industrial process cooling, and commercial climate systems.</p>
+        <a mat-stroked-button routerLink="/commercial" class="audience-card__link">
+          Explore commercial services
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -63,7 +92,7 @@
     </div>
     <div>
       <span class="eyebrow">Why Us</span>
-      <h2>Why homeowners choose us</h2>
+      <h2>Why customers choose us</h2>
       <div class="why-us__list">
         @for (value of values; track value.text) {
           <div class="why-us__item">

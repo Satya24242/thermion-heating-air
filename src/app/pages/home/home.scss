@@ -122,6 +122,47 @@
   }
 }
 
+.audience {
+  background: #fff;
+}
+
+.audience-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.audience-card__icon {
+  color: var(--brand-navy);
+  background: var(--brand-blue-tint);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 16px;
+}
+
+.audience-card p {
+  margin-bottom: 20px;
+}
+
+.audience-card__link {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--brand-navy);
+  border-color: var(--brand-navy);
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
 .service-card {
   text-align: left;
 }
