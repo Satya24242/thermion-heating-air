@@ -36,6 +36,9 @@ export class Home {
     { icon: 'water_drop', title: 'Indoor air quality', description: 'Purifiers, humidifiers, and filtration.' },
     { icon: 'event_available', title: 'Maintenance plans', description: 'Seasonal tune-ups with priority booking.' },
     { icon: 'warning', title: 'Emergency service', description: '24/7 dispatch with no overtime fees.' },
+    { icon: 'science', title: 'Cleanroom HVAC', description: 'ISO-classified cleanroom design, build & maintenance.' },
+    { icon: 'precision_manufacturing', title: 'Industrial process cooling', description: 'Induction furnace areas, manufacturing lines, server rooms.' },
+    { icon: 'storefront', title: 'Commercial HVAC', description: 'VRF/VRV systems for offices, retail & commercial spaces.' },
   ];
 
   protected readonly values: Value[] = [
