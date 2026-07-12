@@ -45,7 +45,7 @@ export class Contact {
 
   protected readonly channels: ContactChannel[] = [
     { icon: 'call', title: 'Call Us', value: '(303) 555-0199', href: 'tel:+13035550199' },
-    { icon: 'mail', title: 'Email Us', value: 'hello@emberfrosthvac.com', href: 'mailto:hello@emberfrosthvac.com' },
+    { icon: 'mail', title: 'Email Us', value: 'hello@thermionhvac.com', href: 'mailto:hello@thermionhvac.com' },
     { icon: 'place', title: 'Service Area', value: 'Denver, CO & surrounding areas', href: '#' },
   ];
 

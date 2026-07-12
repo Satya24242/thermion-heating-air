@@ -7,10 +7,10 @@ import { Contact } from './pages/contact/contact';
 import { NotFound } from './pages/not-found/not-found';
 
 export const routes: Routes = [
-  { path: '', component: Home, title: 'Ember & Frost HVAC — Heating & Cooling Done Right' },
-  { path: 'services', component: Services, title: 'Services — Ember & Frost HVAC' },
-  { path: 'financing', component: Financing, title: 'Financing — Ember & Frost HVAC' },
-  { path: 'about', component: About, title: 'About Us — Ember & Frost HVAC' },
-  { path: 'contact', component: Contact, title: 'Contact — Ember & Frost HVAC' },
-  { path: '**', component: NotFound, title: 'Page Not Found — Ember & Frost HVAC' },
+  { path: '', component: Home, title: 'Thermion Heating & Air — Heating & Cooling Done Right' },
+  { path: 'services', component: Services, title: 'Services — Thermion Heating & Air' },
+  { path: 'financing', component: Financing, title: 'Financing — Thermion Heating & Air' },
+  { path: 'about', component: About, title: 'About Us — Thermion Heating & Air' },
+  { path: 'contact', component: Contact, title: 'Contact — Thermion Heating & Air' },
+  { path: '**', component: NotFound, title: 'Page Not Found — Thermion Heating & Air' },
 ];
