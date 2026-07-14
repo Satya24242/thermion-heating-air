@@ -5,6 +5,7 @@ import { Commercial } from './pages/commercial/commercial';
 import { Financing } from './pages/financing/financing';
 import { About } from './pages/about/about';
 import { Contact } from './pages/contact/contact';
+import { Admin } from './pages/admin/admin';
 import { NotFound } from './pages/not-found/not-found';
 
 export const routes: Routes = [
@@ -14,5 +15,6 @@ export const routes: Routes = [
   { path: 'financing', component: Financing, title: 'Financing — Thermion Heating & Air' },
   { path: 'about', component: About, title: 'About Us — Thermion Heating & Air' },
   { path: 'contact', component: Contact, title: 'Contact — Thermion Heating & Air' },
+  { path: 'admin', component: Admin, title: 'Admin — Thermion Heating & Air' },
   { path: '**', component: NotFound, title: 'Page Not Found — Thermion Heating & Air' },
 ];

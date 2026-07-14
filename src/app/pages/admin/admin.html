@@ -1,0 +1,100 @@
+<section class="admin-page">
+  <div class="container">
+    @if (!authenticated()) {
+      <div class="login-wrap card">
+        <h1>Admin login</h1>
+        <p>Sign in to view submitted service requests.</p>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" autocomplete="username" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" autocomplete="current-password" />
+          </mat-form-field>
+
+          @if (loginError()) {
+            <p class="login-error">{{ loginError() }}</p>
+          }
+
+          <button mat-flat-button type="submit" class="full-width btn-orange" [disabled]="loading()">
+            {{ loading() ? 'Signing in…' : 'Sign in' }}
+          </button>
+        </form>
+      </div>
+    } @else {
+      <div class="admin-header">
+        <div>
+          <h1>Service requests</h1>
+          <p>{{ requests().length }} request(s), newest first.</p>
+        </div>
+        <div class="admin-header__actions">
+          <button mat-stroked-button type="button" (click)="refresh()" [disabled]="loading()">
+            <mat-icon>refresh</mat-icon>
+            Refresh
+          </button>
+          <button mat-stroked-button type="button" (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            Log out
+          </button>
+        </div>
+      </div>
+
+      @if (statusError()) {
+        <p class="status-error">{{ statusError() }}</p>
+      }
+
+      @if (loading()) {
+        <div class="loading">
+          <mat-spinner diameter="32"></mat-spinner>
+        </div>
+      } @else if (requests().length === 0) {
+        <div class="card empty-state">
+          <p>No service requests yet.</p>
+        </div>
+      } @else {
+        <div class="table-wrap card">
+          <table class="requests-table">
+            <thead>
+              <tr>
+                <th>Submitted</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Service</th>
+                <th>Status</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (r of requests(); track r.id) {
+                <tr>
+                  <td>{{ r.createdAt | date: 'medium' }}</td>
+                  <td>{{ r.name }}</td>
+                  <td><a [href]="'tel:' + r.phone">{{ r.phone }}</a></td>
+                  <td><a [href]="'mailto:' + r.email">{{ r.email }}</a></td>
+                  <td>{{ r.service }}</td>
+                  <td>
+                    <select
+                      class="status-select"
+                      [class]="'status-select--' + r.status.toLowerCase()"
+                      [disabled]="updatingId() === r.id"
+                      (change)="onStatusChange(r.id, $any($event.target).value)"
+                    >
+                      @for (option of statusOptions; track option) {
+                        <option [value]="option" [selected]="option === r.status">{{ option }}</option>
+                      }
+                    </select>
+                  </td>
+                  <td class="message-cell">{{ r.message }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+    }
+  </div>
+</section>

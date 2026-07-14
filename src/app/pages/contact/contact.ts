@@ -1,10 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ContactService } from '../../services/contact.service';
 
 interface ContactChannel {
   icon: string;
@@ -28,8 +29,11 @@ interface ContactChannel {
 })
 export class Contact {
   private readonly fb = new FormBuilder();
+  private readonly contactService = inject(ContactService);
 
   protected readonly submitted = signal(false);
+  protected readonly submitting = signal(false);
+  protected readonly submitError = signal<string | null>(null);
 
   protected readonly serviceOptions = [
     'AC repair or installation',
@@ -55,6 +59,7 @@ export class Contact {
     email: ['', [Validators.required, Validators.email]],
     service: ['', Validators.required],
     message: ['', [Validators.required, Validators.minLength(10)]],
+    website: [''],
   });
 
   onSubmit(): void {
@@ -63,7 +68,19 @@ export class Contact {
       return;
     }
 
-    this.submitted.set(true);
-    this.form.reset();
+    this.submitting.set(true);
+    this.submitError.set(null);
+
+    this.contactService.submit(this.form.getRawValue()).subscribe({
+      next: () => {
+        this.submitting.set(false);
+        this.submitted.set(true);
+        this.form.reset();
+      },
+      error: () => {
+        this.submitting.set(false);
+        this.submitError.set('Something went wrong submitting your request. Please call us directly or try again.');
+      },
+    });
   }
 }

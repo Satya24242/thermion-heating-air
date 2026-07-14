@@ -62,8 +62,21 @@
             }
           </mat-form-field>
 
-          <button mat-flat-button type="submit" class="full-width btn-orange">
-            Request Service
+          <input
+            type="text"
+            formControlName="website"
+            class="honeypot"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+          />
+
+          @if (submitError()) {
+            <p class="submit-error">{{ submitError() }}</p>
+          }
+
+          <button mat-flat-button type="submit" class="full-width btn-orange" [disabled]="submitting()">
+            {{ submitting() ? 'Sending…' : 'Request Service' }}
           </button>
         </form>
       }
